@@ -1,0 +1,15 @@
+<resources>
+    <string-array name="department_options">
+        <item>CSE</item>
+        <item>ISE</item>
+        <item>AIML</item>
+        <item>ECE</item>
+        <item>EEE</item>
+        <item>DS</item>
+        <item>IOT</item>
+        <item>CIVIL</item>
+        <item>MECH</item>
+        <item>MBA</item>
+        <item>MCA</item>
+    </string-array>
+</resources>

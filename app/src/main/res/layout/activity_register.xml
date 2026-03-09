@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:contentDescription="@null"
+        android:scaleType="centerCrop"
+        android:src="@drawable/green5bg" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:background="@drawable/bg_auth_card"
+            android:orientation="vertical"
+            android:padding="22dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/register_title"
+                android:textAppearance="?attr/textAppearanceHeadlineMedium"
+                android:textColor="@color/cit_text_primary" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:hintEnabled="false"
+                app:boxBackgroundMode="none">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/inputRegEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:background="@drawable/bg_glass_input"
+                    android:hint="@string/label_email"
+                    android:imeOptions="actionNext"
+                    android:inputType="textEmailAddress"
+                    android:maxLines="1"
+                    android:nextFocusDown="@id/inputRegPassword"
+                    android:paddingHorizontal="24dp"
+                    android:textColor="@color/cit_text_primary"
+                    android:textColorHint="#E6FFFFFF" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                app:hintEnabled="false"
+                app:boxBackgroundMode="none"
+                app:passwordToggleEnabled="true"
+                app:passwordToggleTint="@color/cit_text_primary">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/inputRegPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:background="@drawable/bg_glass_input"
+                    android:hint="@string/label_password"
+                    android:imeOptions="actionNext"
+                    android:inputType="textPassword"
+                    android:maxLines="1"
+                    android:nextFocusDown="@id/inputRegConfirm"
+                    android:paddingHorizontal="24dp"
+                    android:textColor="@color/cit_text_primary"
+                    android:textColorHint="#E6FFFFFF" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                app:hintEnabled="false"
+                app:boxBackgroundMode="none"
+                app:passwordToggleEnabled="true"
+                app:passwordToggleTint="@color/cit_text_primary">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/inputRegConfirm"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:background="@drawable/bg_glass_input"
+                    android:hint="@string/label_confirm_password"
+                    android:imeOptions="actionDone"
+                    android:inputType="textPassword"
+                    android:maxLines="1"
+                    android:paddingHorizontal="24dp"
+                    android:textColor="@color/cit_text_primary"
+                    android:textColorHint="#E6FFFFFF" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnRegisterSubmit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/action_register"
+                style="@style/Widget.CIT.PillButton"
+                app:backgroundTint="@color/cit_primary" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnGoLogin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/action_login"
+                android:textColor="@color/cit_text_primary"
+                style="@style/Widget.CIT.PillButton"
+                app:backgroundTint="@color/cit_surface_alt"
+                app:strokeColor="@color/cit_card_glow"
+                app:strokeWidth="1dp" />
+        </LinearLayout>
+    </LinearLayout>
+    </ScrollView>
+</FrameLayout>

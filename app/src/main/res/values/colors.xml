@@ -1,0 +1,23 @@
+<resources>
+    <color name="cit_primary">#A6F35B</color>
+    <color name="cit_primary_variant">#6FAE36</color>
+    <color name="cit_secondary">#C9F067</color>
+    <color name="cit_tertiary">#FFC56A</color>
+    <color name="cit_background">#0F1115</color>
+    <color name="cit_surface">#1B2129</color>
+    <color name="cit_surface_alt">#252B2E</color>
+    <color name="cit_card_glow">#2F3538</color>
+    <color name="cit_on_primary">#0F1115</color>
+    <color name="cit_on_secondary">#0F1115</color>
+    <color name="cit_button_text_dark">#0F1115</color>
+    <color name="cit_button_text_light">#F2F4F8</color>
+    <color name="cit_text_primary">#F2F4F8</color>
+    <color name="cit_text_muted">#C3CAD4</color>
+    <color name="cit_glass_button">#6B0F1115</color>
+    <color name="cit_glass_stroke">#353C40</color>
+    <color name="cit_input_bg_light">#F2F5EF</color>
+    <color name="cit_text_dark">#0E1112</color>
+    <color name="cit_profile_text_primary">#1F3C1B</color>
+    <color name="cit_profile_text_secondary">#365A2D</color>
+    <color name="cit_profile_text_muted">#4E7146</color>
+</resources>

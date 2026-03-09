@@ -1,0 +1,52 @@
+<resources>
+    <style name="Theme.CITStudentEnrichment" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/cit_primary</item>
+        <item name="colorPrimaryContainer">@color/cit_primary_variant</item>
+        <item name="colorSecondary">@color/cit_secondary</item>
+        <item name="colorTertiary">@color/cit_tertiary</item>
+        <item name="android:colorBackground">@color/cit_background</item>
+        <item name="colorSurface">@color/cit_surface</item>
+        <item name="colorOnSurface">@color/cit_text_primary</item>
+        <item name="colorOnPrimary">@color/cit_on_primary</item>
+        <item name="colorOnSecondary">@color/cit_on_secondary</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+    </style>
+
+    <style name="Widget.CIT.PillButton" parent="Widget.Material3.Button.UnelevatedButton">
+        <item name="elevation">0dp</item>
+        <item name="android:stateListAnimator">@null</item>
+        <item name="cornerRadius">12dp</item>
+        <item name="android:minHeight">40dp</item>
+        <item name="android:paddingStart">18dp</item>
+        <item name="android:paddingEnd">18dp</item>
+        <item name="android:textSize">13sp</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+
+    <style name="Widget.CIT.RectButton" parent="Widget.Material3.Button.UnelevatedButton">
+        <item name="elevation">0dp</item>
+        <item name="android:stateListAnimator">@null</item>
+        <item name="cornerRadius">10dp</item>
+        <item name="android:minHeight">44dp</item>
+        <item name="android:paddingStart">14dp</item>
+        <item name="android:paddingEnd">14dp</item>
+        <item name="android:textSize">13sp</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+
+    <style name="Widget.CIT.HomeGlassButton" parent="Widget.Material3.Button.UnelevatedButton">
+        <item name="elevation">0dp</item>
+        <item name="android:stateListAnimator">@null</item>
+        <item name="cornerRadius">12dp</item>
+        <item name="android:minHeight">56dp</item>
+        <item name="android:paddingStart">16dp</item>
+        <item name="android:paddingEnd">16dp</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="backgroundTint">@color/cit_glass_button</item>
+        <item name="strokeColor">@color/cit_glass_stroke</item>
+        <item name="strokeWidth">1dp</item>
+        <item name="android:textColor">@color/cit_text_primary</item>
+    </style>
+</resources>

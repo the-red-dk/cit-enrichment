@@ -1,0 +1,13 @@
+<resources>
+    <style name="Theme.CITStudentEnrichment" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">#8BB4F7</item>
+        <item name="colorPrimaryContainer">#2B3A57</item>
+        <item name="colorSecondary">#F7C76A</item>
+        <item name="colorTertiary">#63C7B2</item>
+        <item name="android:colorBackground">#111827</item>
+        <item name="colorOnPrimary">#0C1A2B</item>
+        <item name="colorOnSecondary">#2B1A00</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+    </style>
+</resources>

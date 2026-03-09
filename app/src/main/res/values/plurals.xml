@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="home_claim_count">
+        <item quantity="one">1 claim</item>
+        <item quantity="other">%d claims</item>
+    </plurals>
+
+    <plurals name="home_pending_count">
+        <item quantity="one">1 pending review</item>
+        <item quantity="other">%d pending reviews</item>
+    </plurals>
+</resources>

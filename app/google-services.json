@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "53723471840",
+    "project_id": "cit-student-enrichment",
+    "storage_bucket": "cit-student-enrichment.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:53723471840:android:f70e20555e558f377ad585",
+        "android_client_info": {
+          "package_name": "com.daksha.cit.enrichment"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD-9jarzkiqIoVqGyFcQSlbYrOpLWNGYsE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

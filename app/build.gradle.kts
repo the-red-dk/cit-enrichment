@@ -4,6 +4,19 @@ plugins {
     id("com.google.gms.google-services")
 }
 
+import java.util.Properties
+
+val localProperties = Properties().apply {
+    val file = rootProject.file("local.properties")
+    if (file.exists()) {
+        file.inputStream().use(::load)
+    }
+}
+
+fun quoteBuildConfig(value: String): String {
+    return "\"${value.replace("\\", "\\\\").replace("\"", "\\\"")}\""
+}
+
 android {
     namespace = "com.daksha.cit.enrichment"
     compileSdk = 34
@@ -16,6 +29,10 @@ android {
         targetSdk = 34
         versionCode = 2
         versionName = "1.1"
+
+        buildConfigField("String", "CLOUDINARY_CLOUD_NAME", quoteBuildConfig(localProperties.getProperty("cloudinary.cloudName", "")))
+        buildConfigField("String", "CLOUDINARY_UPLOAD_PRESET", quoteBuildConfig(localProperties.getProperty("cloudinary.uploadPreset", "")))
+        buildConfigField("String", "CLOUDINARY_FOLDER", quoteBuildConfig(localProperties.getProperty("cloudinary.folder", "cit-student-enrichment/claims")))
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }

@@ -26,6 +26,7 @@ class ClaimDetailActivity : AppCompatActivity() {
     }
 
     private fun loadClaim(claimId: String) {
+        val activeUserKey = SessionManager.getActiveUserKey(this)
         val txtClaimType = findViewById<TextView>(R.id.txtDetailClaimType)
         val txtTitle = findViewById<TextView>(R.id.txtDetailTitle)
         val txtStatus = findViewById<TextView>(R.id.txtDetailStatus)
@@ -39,6 +40,17 @@ class ClaimDetailActivity : AppCompatActivity() {
             .document(claimId)
             .get()
             .addOnSuccessListener { document ->
+                if (!document.exists()) {
+                    txtDescription.text = getString(R.string.claims_load_failed)
+                    return@addOnSuccessListener
+                }
+
+                if (document.getString("userKey") != activeUserKey) {
+                    txtDescription.text = getString(R.string.error_claim_access_denied)
+                    txtDocuments.text = getString(R.string.claim_detail_no_documents)
+                    return@addOnSuccessListener
+                }
+
                 val claimType = document.getString("claimType").orEmpty().ifBlank { getString(R.string.claim_type_unknown) }
                 val title = document.getString("title").orEmpty().ifBlank { getString(R.string.claim_title_unknown) }
                 val status = document.getString("status").orEmpty().ifBlank { getString(R.string.claim_status_pending) }

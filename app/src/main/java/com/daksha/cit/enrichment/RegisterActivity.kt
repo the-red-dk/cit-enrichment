@@ -63,7 +63,7 @@ class RegisterActivity : AppCompatActivity() {
                 return
             }
 
-            password.length < 6 -> {
+            !isStrongPassword(password) -> {
                 Toast.makeText(this, R.string.error_password_too_short, Toast.LENGTH_SHORT).show()
                 return
             }
@@ -135,5 +135,9 @@ class RegisterActivity : AppCompatActivity() {
         btnRegisterSubmit.isEnabled = !isLoading
         btnGoLogin.isEnabled = !isLoading
         btnRegisterSubmit.text = getString(if (isLoading) R.string.label_creating_account else R.string.action_register)
+    }
+
+    private fun isStrongPassword(password: String): Boolean {
+        return password.length >= 8 && password.any(Char::isLetter) && password.any(Char::isDigit)
     }
 }

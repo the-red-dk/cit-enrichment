@@ -481,6 +481,10 @@ class NptelFormActivity : AppCompatActivity() {
     }
 
     private fun performCloudinaryUpload(uri: Uri, fileName: String): UploadedDocument {
+        if (BuildConfig.CLOUDINARY_CLOUD_NAME.isBlank() || BuildConfig.CLOUDINARY_UPLOAD_PRESET.isBlank()) {
+            throw IllegalStateException(getString(R.string.error_upload_not_configured))
+        }
+
         val inputStream = try {
             contentResolver.openInputStream(uri)
         } catch (error: SocketTimeoutException) {
@@ -698,9 +702,9 @@ class NptelFormActivity : AppCompatActivity() {
         private val dateFormatter = SimpleDateFormat("dd/MM/yyyy", Locale.getDefault())
         private const val CLAIM_SAVE_TIMEOUT_MS = 15000L
         private const val NETWORK_TIMEOUT_MS = 20000
-        private const val CLOUDINARY_CLOUD_NAME = "dnjaiy2cv"
-        private const val CLOUDINARY_UPLOAD_PRESET = "cit_claim_updates"
-        private const val CLOUDINARY_FOLDER = "cit-student-enrichment/claims"
+        private val CLOUDINARY_CLOUD_NAME = BuildConfig.CLOUDINARY_CLOUD_NAME
+        private val CLOUDINARY_UPLOAD_PRESET = BuildConfig.CLOUDINARY_UPLOAD_PRESET
+        private val CLOUDINARY_FOLDER = BuildConfig.CLOUDINARY_FOLDER
         private const val DEFAULT_UPLOAD_MIME_TYPE = "application/octet-stream"
         private const val PDF_MIME_TYPE = "application/pdf"
         private const val IMAGE_MIME_PREFIX = "image/"

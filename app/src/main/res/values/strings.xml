@@ -130,7 +130,7 @@
     <string name="error_fill_required_fields">Please fill all required fields.</string>
     <string name="error_fix_form_fields">Fix the highlighted fields and try again.</string>
     <string name="error_invalid_email">Please enter a valid email address.</string>
-    <string name="error_password_too_short">Password must be at least 6 characters.</string>
+    <string name="error_password_too_short">Password must be at least 8 characters and include letters and numbers.</string>
     <string name="error_password_mismatch">Passwords do not match.</string>
     <string name="error_login_failed">Login failed. Please try again.</string>
     <string name="error_register_failed">Registration failed. Please try again.</string>
@@ -153,8 +153,10 @@
     <string name="error_payment_upload_failed">Payment upload failed</string>
     <string name="error_storage_bucket_unavailable">%1$s. Firebase Storage bucket is unavailable or misconfigured.</string>
     <string name="error_document_open_failed">%1$s. The selected file could not be opened from your device.</string>
+    <string name="error_upload_not_configured">Document upload is not configured for this build.</string>
     <string name="error_upload_timed_out">Upload timed out. Check your connection and try again.</string>
     <string name="error_claim_save_taking_long">Saving claim details is taking too long. Check Firestore or your connection.</string>
+    <string name="error_claim_access_denied">You do not have access to this claim.</string>
     <string name="status_upload_starting">Preparing your claim…</string>
     <string name="status_uploading_certificate">Uploading certificate…</string>
     <string name="status_uploading_payment">Uploading payment proof…</string>

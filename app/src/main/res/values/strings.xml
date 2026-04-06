@@ -19,6 +19,8 @@
     <string name="landing_title">CIT Student Enrichment</string>
     <string name="landing_subtitle">Apply, track, and grow with campus opportunities.</string>
     <string name="landing_prompt">Get started</string>
+    <string name="app_info_title">About this app</string>
+    <string name="app_info_description">CIT Student Enrichment helps students apply for reimbursements, track claim status, and manage course-related credits in one place.</string>
 
     <string name="login_title">Login</string>
     <string name="register_title">Register</string>
@@ -30,7 +32,7 @@
 
     <string name="home_title">Home Dashboard</string>
     <string name="home_subtitle">Quick actions and reimbursements</string>
-    <string name="home_subtitle_guest">Testing as guest. Claims stay tied to this device.</string>
+    <string name="home_subtitle_guest">Quick actions and reimbursements</string>
     <string name="home_subtitle_user">Welcome back, %1$s</string>
     <string name="home_card_title">Active reimbursements</string>
     <string name="home_card_amount">₹ 12,480</string>
@@ -49,9 +51,12 @@
 
     <string name="apply_title">Apply for Reimbursement</string>
     <string name="apply_nptel">NPTEL Certification</string>
-    <string name="apply_hackathon">Hackathon / Competition</string>
-    <string name="apply_sports">Sports / Cultural</string>
-    <string name="apply_other">Other Academic Claim</string>
+    <string name="apply_gate">GATE</string>
+    <string name="apply_hackathon">Hackathon / Ideathon / Project Competition</string>
+    <string name="apply_sports">Cultural / Sports</string>
+    <string name="apply_patent">Patent Filing</string>
+    <string name="apply_publication">Research Publication</string>
+    <string name="apply_conferences">Conferences</string>
     <string name="generic_claim_title">%1$s Claim Form</string>
 
     <string name="nptel_title">NPTEL Reimbursement Form</string>
@@ -63,6 +68,8 @@
     <string name="label_year">Enter your year 1-4</string>
     <string name="label_course_name">Course name</string>
     <string name="label_course_id">Course ID</string>
+    <string name="prefix_course_id">Course ID: </string>
+    <string name="label_nptel_suggestions">Possible NPTEL courses</string>
     <string name="label_claim_title">Claim title / event name</string>
     <string name="label_reference_id">Reference ID / event code</string>
     <string name="label_exam_date">Exam date</string>
@@ -83,7 +90,9 @@
     <string name="claim_type_unknown">Claim</string>
     <string name="claim_title_unknown">Untitled claim</string>
     <string name="claim_date_unknown">Date unavailable</string>
-    <string name="claim_list_subtitle">Status: %1$s • Amount: %2$s • Date: %3$s</string>
+    <string name="claim_list_subtitle">Status: %1$s • Amount: %2$s</string>
+    <string name="claim_list_exam_date">Exam date: %1$s</string>
+    <string name="claim_list_submitted_at">Submitted: %1$s</string>
     <string name="claim_detail_title">Application Detail</string>
     <string name="claim_detail_type">Claim type</string>
     <string name="claim_detail_label_title">Title</string>
@@ -96,12 +105,27 @@
     <string name="claim_detail_no_documents">No document links available.</string>
     <string name="profile_title">Profile</string>
     <string name="profile_placeholder">Profile details will appear here.</string>
-    <string name="profile_guest_name">Guest User</string>
+    <string name="profile_guest_name">Student</string>
     <string name="profile_guest_email">Not signed in</string>
     <string name="profile_guest_meta">Sign in to sync claims and profile details.</string>
-    <string name="profile_guest_mode_only">Guest-only mode active</string>
-    <string name="profile_guest_mode_notice">Login and registration are temporarily disabled. You can continue using the app as a guest.</string>
+    <string name="profile_guest_mode_only">Not signed in</string>
+    <string name="profile_guest_mode_notice">Sign in to sync claims and profile details.</string>
     <string name="profile_meta_default">Update your department and semester next.</string>
+    <string name="profile_credits_title">Credits</string>
+    <string name="profile_credits_summary_placeholder">Total credits: 0 across 0 courses</string>
+    <string name="profile_credits_summary">Total credits: %1$d across %2$d courses</string>
+    <string name="profile_credits_empty">No NPTEL/course reimbursements with credits found yet.</string>
+    <string name="profile_credits_value">%1$d Credits</string>
+    <string name="profile_credits_meta">%1$s • %2$s</string>
+    <string name="profile_devices_title">Devices</string>
+    <string name="profile_devices_loading">Loading active devices...</string>
+    <string name="profile_devices_summary">Logged in on %1$d device(s)</string>
+    <string name="profile_devices_guest_summary">This device only</string>
+    <string name="profile_devices_local_only">Local-only session</string>
+    <string name="profile_devices_unavailable">Device information unavailable.</string>
+    <string name="profile_this_device">This device</string>
+    <string name="profile_device_unknown">Unknown device</string>
+    <string name="profile_device_last_seen">Last seen: %1$s</string>
     <string name="notifications_title">Notifications</string>
     <string name="notifications_placeholder">No notifications yet.</string>
     <string name="notifications_empty_logged">No notifications yet. Claim updates will appear here.</string>
@@ -111,7 +135,8 @@
 
     <string name="action_login">Login</string>
     <string name="action_register">Register</string>
-    <string name="action_continue_guest">Continue as guest</string>
+    <string name="action_forgot_password">Forgot Password?</string>
+    <string name="action_continue_guest">Continue</string>
     <string name="action_policy_info">Policy info</string>
     <string name="action_apply">Apply for reimbursement</string>
     <string name="action_track">Track status</string>
@@ -122,28 +147,40 @@
     <string name="action_pick_payment">Upload payment proof</string>
     <string name="action_submit">Submit</string>
     <string name="action_sending">Sending…</string>
+    <string name="action_open_course_page">Open course page</string>
     <string name="action_edit_profile">Edit profile</string>
     <string name="action_logout">Logout</string>
     <string name="action_back_to_home">Back to home</string>
     <string name="action_go_to_login">Go to login</string>
     <string name="action_save">Save</string>
+    <string name="hint_open_course_page">Tip: open the course page to verify the NPTEL listing.</string>
+    <string name="hint_nptel_suggestions_min_words">Type at least 1 matching word to see NPTEL course suggestions.</string>
+    <string name="status_loading_nptel_courses">Loading NPTEL course suggestions…</string>
+    <string name="message_nptel_suggestions_unavailable">NPTEL suggestions are unavailable right now. You can still enter the course manually.</string>
+    <string name="message_nptel_suggestions_empty">No close NPTEL matches found yet.</string>
+    <string name="label_nptel_course_item">%1$s</string>
+        <string name="error_score_below_minimum">Score must be at least 60.</string>
+    <string name="label_nptel_course_professor_unknown">Faculty details unavailable</string>
     <string name="error_fill_required_fields">Please fill all required fields.</string>
     <string name="error_fix_form_fields">Fix the highlighted fields and try again.</string>
     <string name="error_invalid_email">Please enter a valid email address.</string>
     <string name="error_password_too_short">Password must be at least 8 characters and include letters and numbers.</string>
     <string name="error_password_mismatch">Passwords do not match.</string>
     <string name="error_login_failed">Login failed. Please try again.</string>
+    <string name="error_password_reset_failed">Password reset failed. Please try again.</string>
+    <string name="error_reset_email_required">Enter your email address first.</string>
     <string name="error_register_failed">Registration failed. Please try again.</string>
     <string name="error_auth_configuration_not_found">Firebase Authentication is not configured for this project. In Firebase Console, open Authentication, click Get started, then enable Email/Password and Anonymous sign-in.</string>
     <string name="error_auth_provider_disabled">The required Firebase sign-in method is disabled. Enable Email/Password and Anonymous in Firebase Console.</string>
     <string name="error_profile_save_failed">Account created, but profile could not be saved.</string>
     <string name="error_profile_update_failed">Unable to update profile.</string>
     <string name="error_register_number_invalid">Enter a valid register number.</string>
+    <string name="error_select_nptel_suggestion">Select a course from suggestions to auto-fill Course ID.</string>
     <string name="error_select_department">Select your department.</string>
     <string name="error_claim_date_required">Enter the claim date.</string>
     <string name="error_year_invalid">Year must be between 1 and 4.</string>
     <string name="error_amount_invalid">Enter a valid amount greater than 0.</string>
-    <string name="error_guest_session_failed">Guest backend sign-in failed. Enable Firebase Anonymous sign-in or check your connection.</string>
+    <string name="error_guest_session_failed">Session sign-in failed. Check your connection.</string>
     <string name="error_session_unavailable">No Firebase session is available. Sign in and try again.</string>
     <string name="error_documents_required">Please upload certificate and payment proof.</string>
     <string name="error_documents_must_differ">Certificate and payment proof must be different files.</string>
@@ -155,13 +192,18 @@
     <string name="error_document_open_failed">%1$s. The selected file could not be opened from your device.</string>
     <string name="error_upload_not_configured">Document upload is not configured for this build.</string>
     <string name="error_upload_timed_out">Upload timed out. Check your connection and try again.</string>
-    <string name="error_claim_save_taking_long">Saving claim details is taking too long. Check Firestore or your connection.</string>
+    <string name="error_claim_save_taking_long">ERROR: saving claim details is taking too long. check firestore or your connection</string>
     <string name="error_claim_access_denied">You do not have access to this claim.</string>
     <string name="status_upload_starting">Preparing your claim…</string>
     <string name="status_uploading_certificate">Uploading certificate…</string>
     <string name="status_uploading_payment">Uploading payment proof…</string>
+    <string name="status_uploading_documents">Uploading certificate and payment proof…</string>
     <string name="status_saving_claim">Saving claim details…</string>
+    <string name="status_retrying_save_claim">Saving is delayed, retrying…</string>
+    <string name="status_verifying_save_claim">Verifying save status…</string>
     <string name="status_claim_submitted">Claim submitted successfully.</string>
     <string name="message_profile_updated">Profile updated successfully.</string>
     <string name="message_claim_submitted">%1$s submitted successfully.</string>
+    <string name="message_claim_saved_locally">Claim saved locally on this device because cloud sync is unavailable right now.</string>
+    <string name="message_password_reset_sent">Password reset email sent. Check your inbox.</string>
 </resources>

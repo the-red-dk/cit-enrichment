@@ -26,6 +26,11 @@ class ClaimDetailActivity : AppCompatActivity() {
     }
 
     private fun loadClaim(claimId: String) {
+        if (SessionManager.isGuestMode(this)) {
+            loadLocalClaim(claimId)
+            return
+        }
+
         val activeUserKey = SessionManager.getActiveUserKey(this)
         val txtClaimType = findViewById<TextView>(R.id.txtDetailClaimType)
         val txtTitle = findViewById<TextView>(R.id.txtDetailTitle)
@@ -41,7 +46,7 @@ class ClaimDetailActivity : AppCompatActivity() {
             .get()
             .addOnSuccessListener { document ->
                 if (!document.exists()) {
-                    txtDescription.text = getString(R.string.claims_load_failed)
+                    loadLocalClaim(claimId)
                     return@addOnSuccessListener
                 }
 
@@ -81,8 +86,38 @@ class ClaimDetailActivity : AppCompatActivity() {
                     .ifBlank { getString(R.string.claim_detail_no_documents) }
             }
             .addOnFailureListener {
-                txtDescription.text = getString(R.string.claims_load_failed)
+                loadLocalClaim(claimId)
             }
+    }
+
+    private fun loadLocalClaim(claimId: String) {
+        val txtClaimType = findViewById<TextView>(R.id.txtDetailClaimType)
+        val txtTitle = findViewById<TextView>(R.id.txtDetailTitle)
+        val txtStatus = findViewById<TextView>(R.id.txtDetailStatus)
+        val txtAmount = findViewById<TextView>(R.id.txtDetailAmount)
+        val txtDate = findViewById<TextView>(R.id.txtDetailDate)
+        val txtDescription = findViewById<TextView>(R.id.txtDetailDescription)
+        val txtDocuments = findViewById<TextView>(R.id.txtDetailDocuments)
+
+        val claim = LocalClaimStore.getClaim(this, claimId)
+        if (claim == null) {
+            txtDescription.text = getString(R.string.claims_load_failed)
+            return
+        }
+
+        txtClaimType.text = claim.claimType.ifBlank { getString(R.string.claim_type_unknown) }
+        txtTitle.text = claim.title.ifBlank { getString(R.string.claim_title_unknown) }
+        txtStatus.text = getString(R.string.claim_detail_status_value, claim.status.ifBlank { getString(R.string.claim_status_pending) })
+        txtAmount.text = getString(R.string.claim_detail_amount_value, claim.amountPaid.ifBlank { "-" })
+        txtDate.text = getString(R.string.claim_detail_date_value, claim.claimDate.ifBlank { getString(R.string.claim_date_unknown) })
+        txtDescription.text = claim.remarks.ifBlank { getString(R.string.claim_detail_no_description) }
+        txtDocuments.text = listOf(
+            formatDocumentLine(claim.certificateFileName, claim.certificateUrl, claim.certificateStoragePath),
+            formatDocumentLine(claim.paymentFileName, claim.paymentUrl, claim.paymentStoragePath)
+        )
+            .filter { it.isNotBlank() }
+            .joinToString("\n\n")
+            .ifBlank { getString(R.string.claim_detail_no_documents) }
     }
 
     private fun formatDocumentLine(fileName: String, url: String, storagePath: String): String {

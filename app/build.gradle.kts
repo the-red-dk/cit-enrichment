@@ -21,35 +21,20 @@ android {
     namespace = "com.daksha.cit.enrichment"
     compileSdk = 34
 
-    flavorDimensions += "mode"
-
     defaultConfig {
         applicationId = "com.daksha.cit.enrichment"
         minSdk = 21
         targetSdk = 34
         versionCode = 2
         versionName = "1.1"
+        buildConfigField("boolean", "ENABLE_FIREBASE_AUTH", "true")
 
-        buildConfigField("String", "CLOUDINARY_CLOUD_NAME", quoteBuildConfig(localProperties.getProperty("cloudinary.cloudName", "")))
-        buildConfigField("String", "CLOUDINARY_UPLOAD_PRESET", quoteBuildConfig(localProperties.getProperty("cloudinary.uploadPreset", "")))
-        buildConfigField("String", "CLOUDINARY_FOLDER", quoteBuildConfig(localProperties.getProperty("cloudinary.folder", "cit-student-enrichment/claims")))
+        buildConfigField("String", "SUPABASE_URL", quoteBuildConfig(localProperties.getProperty("supabase.url", "")))
+        buildConfigField("String", "SUPABASE_ANON_KEY", quoteBuildConfig(localProperties.getProperty("supabase.anonKey", "")))
+        buildConfigField("String", "SUPABASE_STORAGE_BUCKET", quoteBuildConfig(localProperties.getProperty("supabase.storageBucket", "claim-documents")))
+        buildConfigField("String", "SUPABASE_STORAGE_FOLDER", quoteBuildConfig(localProperties.getProperty("supabase.storageFolder", "claims")))
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-    }
-
-    productFlavors {
-        create("guest") {
-            dimension = "mode"
-            versionNameSuffix = "-guest"
-            buildConfigField("boolean", "ENABLE_FIREBASE_AUTH", "false")
-            resValue("string", "app_name", "CIT Student Enrichment")
-        }
-        create("auth") {
-            dimension = "mode"
-            versionNameSuffix = "-auth"
-            buildConfigField("boolean", "ENABLE_FIREBASE_AUTH", "true")
-            resValue("string", "app_name", "CIT Student Enrichment Auth")
-        }
     }
 
     buildTypes {
@@ -84,4 +69,5 @@ dependencies {
     implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("com.google.android.material:material:1.11.0")
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
+    implementation("org.jsoup:jsoup:1.18.1")
 }

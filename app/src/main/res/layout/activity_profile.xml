@@ -130,168 +130,70 @@
                 android:layout_width="match_parent"
                 android:layout_height="24dp" />
 
-            <!-- Settings List -->
-            <!-- Language -->
-            <LinearLayout
-                android:layout_width="match_parent"
+            <TextView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/bg_glass_item_profile"
-                android:paddingHorizontal="20dp"
-                android:paddingVertical="16dp"
-                android:gravity="center_vertical"
-                android:layout_marginBottom="12dp">
-                <ImageView
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
-                    android:src="@drawable/ic_language" />
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:layout_marginStart="16dp"
-                    android:text="Language"
-                    android:textSize="16sp"
-                    android:textColor="@color/cit_profile_text_primary" />
-                <ImageView
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    android:src="@drawable/ic_chevron_right" />
-            </LinearLayout>
+                android:text="@string/profile_credits_title"
+                android:textColor="@color/cit_profile_text_primary"
+                android:textSize="18sp"
+                android:fontFamily="sans-serif-medium" />
 
-            <!-- Currencies -->
-            <LinearLayout
-                android:layout_width="match_parent"
+            <TextView
+                android:id="@+id/txtCreditsSummary"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/bg_glass_item_profile"
-                android:paddingHorizontal="20dp"
-                android:paddingVertical="16dp"
-                android:gravity="center_vertical"
-                android:layout_marginBottom="12dp">
-                <ImageView
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
-                    android:src="@drawable/ic_currency" />
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:layout_marginStart="16dp"
-                    android:text="Fees &amp; Currency"
-                    android:textSize="16sp"
-                    android:textColor="@color/cit_profile_text_primary" />
-                <ImageView
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    android:src="@drawable/ic_chevron_right" />
-            </LinearLayout>
+                android:layout_marginTop="6dp"
+                android:lineSpacingExtra="2dp"
+                android:textColor="@color/cit_profile_text_primary"
+                android:textSize="14sp"
+                android:text="@string/profile_credits_summary_placeholder" />
 
-            <!-- Appearance -->
-            <LinearLayout
+            <TextView
+                android:id="@+id/txtCreditsEmpty"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
                 android:background="@drawable/bg_glass_item_profile"
-                android:paddingHorizontal="20dp"
-                android:paddingVertical="16dp"
-                android:gravity="center_vertical"
-                android:layout_marginBottom="12dp">
-                <ImageView
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
-                    android:src="@drawable/ic_appearance" />
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:layout_marginStart="16dp"
-                    android:text="Appearance"
-                    android:textSize="16sp"
-                    android:textColor="@color/cit_profile_text_primary" />
-                <ImageView
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    android:src="@drawable/ic_chevron_right" />
-            </LinearLayout>
+                android:paddingHorizontal="16dp"
+                android:paddingVertical="14dp"
+                android:text="@string/profile_credits_empty"
+                android:textColor="@color/cit_profile_text_primary"
+                android:textSize="14sp"
+                android:visibility="gone" />
 
-            <!-- Security -->
             <LinearLayout
+                android:id="@+id/containerCreditsHistory"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/bg_glass_item_profile"
-                android:paddingHorizontal="20dp"
-                android:paddingVertical="16dp"
-                android:gravity="center_vertical"
-                android:layout_marginBottom="12dp">
-                <ImageView
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
-                    android:src="@drawable/ic_security" />
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:layout_marginStart="16dp"
-                    android:text="Application Security"
-                    android:textSize="16sp"
-                    android:textColor="@color/cit_profile_text_primary" />
-                <ImageView
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    android:src="@drawable/ic_chevron_right" />
-            </LinearLayout>
+                android:layout_marginTop="12dp"
+                android:orientation="vertical" />
 
-            <!-- Devices -->
-            <LinearLayout
-                android:layout_width="match_parent"
+            <TextView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/bg_glass_item_profile"
-                android:paddingHorizontal="20dp"
-                android:paddingVertical="16dp"
-                android:gravity="center_vertical"
-                android:layout_marginBottom="12dp">
-                <ImageView
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
-                    android:src="@drawable/ic_devices" />
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:layout_marginStart="16dp"
-                    android:text="Manage Devices"
-                    android:textSize="16sp"
-                    android:textColor="@color/cit_profile_text_primary" />
-                <ImageView
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    android:src="@drawable/ic_chevron_right" />
-            </LinearLayout>
+                android:layout_marginTop="20dp"
+                android:text="@string/profile_devices_title"
+                android:textColor="@color/cit_profile_text_primary"
+                android:textSize="18sp"
+                android:fontFamily="sans-serif-medium" />
 
-            <!-- Password -->
+            <TextView
+                android:id="@+id/txtDevicesSummary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:lineSpacingExtra="2dp"
+                android:textColor="@color/cit_profile_text_primary"
+                android:textSize="14sp"
+                android:text="@string/profile_devices_loading" />
+
             <LinearLayout
+                android:id="@+id/containerDevices"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/bg_glass_item_profile"
-                android:paddingHorizontal="20dp"
-                android:paddingVertical="16dp"
-                android:gravity="center_vertical"
-                android:layout_marginBottom="24dp">
-                <ImageView
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
-                    android:src="@drawable/ic_password" />
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:layout_marginStart="16dp"
-                    android:text="Change Password"
-                    android:textSize="16sp"
-                    android:textColor="@color/cit_profile_text_primary" />
-                <ImageView
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    android:src="@drawable/ic_chevron_right" />
-            </LinearLayout>
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="24dp"
+                android:orientation="vertical" />
 
         </LinearLayout>
     </ScrollView>

@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.util.Patterns
 import android.view.inputmethod.EditorInfo
+import android.view.View
 import android.widget.Button
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -29,6 +30,10 @@ class RegisterActivity : AppCompatActivity() {
         btnRegisterSubmit = findViewById(R.id.btnRegisterSubmit)
         btnGoLogin = findViewById(R.id.btnGoLogin)
 
+        findViewById<View>(R.id.btnBackRegister).setOnClickListener {
+            finish()
+        }
+
         inputRegConfirm.setOnEditorActionListener { _, actionId, _ ->
             if (actionId == EditorInfo.IME_ACTION_DONE) {
                 registerUser()
@@ -44,6 +49,7 @@ class RegisterActivity : AppCompatActivity() {
 
         btnGoLogin.setOnClickListener {
             startActivity(Intent(this, LoginActivity::class.java))
+            finish()
         }
     }
 

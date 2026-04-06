@@ -26,15 +26,6 @@
                 android:contentDescription="@string/action_back"
                 android:src="@drawable/ic_back_arrow"
                 app:tint="@color/cit_text_primary" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:text="@string/claim_detail_title"
-                android:textColor="@color/cit_text_primary"
-                android:textSize="28sp"
-                android:fontFamily="sans-serif-medium" />
         </LinearLayout>
 
         <com.google.android.material.card.MaterialCardView
@@ -128,6 +119,7 @@
                     android:autoLink="web"
                     android:linksClickable="true"
                     android:textColor="@color/cit_text_primary" />
+
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
     </LinearLayout>

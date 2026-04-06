@@ -20,16 +20,22 @@ class ApplyActivity : AppCompatActivity() {
 
         val openClaimForm = View.OnClickListener { view ->
             val claimType = when (view.id) {
+                R.id.btnApplyGate -> getString(R.string.apply_gate)
                 R.id.btnApplyHackathon -> getString(R.string.apply_hackathon)
                 R.id.btnApplySports -> getString(R.string.apply_sports)
-                else -> getString(R.string.apply_other)
+                R.id.btnApplyPatent -> getString(R.string.apply_patent)
+                R.id.btnApplyPublication -> getString(R.string.apply_publication)
+                else -> getString(R.string.apply_conferences)
             }
 
             startActivity(NptelFormActivity.createIntent(this, claimType, getString(R.string.generic_claim_title, claimType)))
         }
 
+        findViewById<View>(R.id.btnApplyGate).setOnClickListener(openClaimForm)
         findViewById<View>(R.id.btnApplyHackathon).setOnClickListener(openClaimForm)
         findViewById<View>(R.id.btnApplySports).setOnClickListener(openClaimForm)
-        findViewById<View>(R.id.btnApplyOther).setOnClickListener(openClaimForm)
+        findViewById<View>(R.id.btnApplyPatent).setOnClickListener(openClaimForm)
+        findViewById<View>(R.id.btnApplyPublication).setOnClickListener(openClaimForm)
+        findViewById<View>(R.id.btnApplyConferences).setOnClickListener(openClaimForm)
     }
 }

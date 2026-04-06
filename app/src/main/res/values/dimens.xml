@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="nptel_error_scroll_offset">32dp</dimen>
+    <dimen name="spacing_small">8dp</dimen>
+    <dimen name="nptel_input_horizontal_padding">24dp</dimen>
+    <dimen name="nptel_suggestion_vertical_padding">14dp</dimen>
 </resources>

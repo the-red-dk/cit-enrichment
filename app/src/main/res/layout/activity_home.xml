@@ -44,9 +44,13 @@
                 android:textColor="@color/cit_text_primary" />
 
             <ImageView
+                android:id="@+id/btnAppInfo"
                 android:layout_width="28dp"
                 android:layout_height="28dp"
                 android:layout_marginStart="8dp"
+                android:contentDescription="@string/app_info_title"
+                android:clickable="true"
+                android:focusable="true"
                 android:src="@android:drawable/ic_dialog_info"
                 android:tint="@color/cit_card_glow" />
         </LinearLayout>
@@ -86,7 +90,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:hint="0.00"
+                    android:hint="0 claims"
                     android:textAppearance="?attr/textAppearanceHeadlineMedium"
                     android:textColor="@color/cit_text_primary" />
 

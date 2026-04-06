@@ -12,17 +12,13 @@ class SplashActivity : AppCompatActivity() {
         setContentView(R.layout.activity_splash)
 
         Handler(Looper.getMainLooper()).postDelayed({
-            if (BuildConfig.ENABLE_FIREBASE_AUTH) {
-                val destination = if (SessionManager.hasSignedInUser()) {
-                    HomeActivity::class.java
-                } else {
-                    MainActivity::class.java
-                }
-                startActivity(Intent(this, destination))
+            val destination = if (BuildConfig.ENABLE_FIREBASE_AUTH && SessionManager.hasSignedInUser()) {
+                HomeActivity::class.java
             } else {
-                SessionManager.enableGuestMode(this)
-                startActivity(Intent(this, HomeActivity::class.java))
+                MainActivity::class.java
             }
+
+            startActivity(Intent(this, destination))
             finish()
         }, 1500L)
     }

@@ -30,6 +30,11 @@ class NotificationsActivity : AppCompatActivity() {
 
     override fun onStart() {
         super.onStart()
+        if (SessionManager.isGuestMode(this)) {
+            renderLocalNotifications()
+            return
+        }
+
         if (BuildConfig.ENABLE_FIREBASE_AUTH) {
             SessionManager.ensureBackendSession(
                 context = this,
@@ -67,27 +72,19 @@ class NotificationsActivity : AppCompatActivity() {
                 progressNotifications.visibility = View.GONE
 
                 if (error != null) {
-                    val errorView = TextView(this)
-                    errorView.text = getString(R.string.notifications_load_failed)
-                    containerNotifications.removeAllViews()
-                    containerNotifications.addView(errorView)
+                    renderLocalNotifications()
                     return@addSnapshotListener
                 }
 
                 val safeSnapshot = snapshot ?: run {
-                    val errorView = TextView(this)
-                    errorView.text = getString(R.string.notifications_load_failed)
-                    containerNotifications.removeAllViews()
-                    containerNotifications.addView(errorView)
+                    renderLocalNotifications()
                     return@addSnapshotListener
                 }
 
                 containerNotifications.removeAllViews()
 
                 if (safeSnapshot.isEmpty) {
-                    val emptyView = TextView(this)
-                    emptyView.text = getString(R.string.notifications_empty_logged)
-                    containerNotifications.addView(emptyView)
+                    renderLocalNotifications()
                     return@addSnapshotListener
                 }
 
@@ -107,5 +104,30 @@ class NotificationsActivity : AppCompatActivity() {
                     containerNotifications.addView(item)
                 }
             }
+    }
+
+    private fun renderLocalNotifications() {
+        progressNotifications.visibility = View.GONE
+        containerNotifications.removeAllViews()
+        notificationsListener?.remove()
+        notificationsListener = null
+
+        val claims = LocalClaimStore.getClaims(this).take(5)
+        if (claims.isEmpty()) {
+            val emptyView = TextView(this)
+            emptyView.text = getString(R.string.notifications_empty_logged)
+            containerNotifications.addView(emptyView)
+            return
+        }
+
+        for (claim in claims) {
+            val item = layoutInflater.inflate(R.layout.item_claim, containerNotifications, false)
+            val title = item.findViewById<TextView>(R.id.claimTitle)
+            val subtitle = item.findViewById<TextView>(R.id.claimSubtitle)
+
+            title.text = getString(R.string.notification_claim_title, claim.claimType.ifBlank { getString(R.string.claim_type_unknown) })
+            subtitle.text = getString(R.string.notification_claim_subtitle, claim.status.ifBlank { getString(R.string.claim_status_pending) })
+            containerNotifications.addView(item)
+        }
     }
 }

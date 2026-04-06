@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="10dp"
+    android:background="@drawable/bg_glass_item_profile"
+    android:orientation="horizontal"
+    android:paddingHorizontal="16dp"
+    android:paddingVertical="14dp">
+
+    <TextView
+        android:id="@+id/txtCreditValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="4 Credits"
+        android:textColor="@color/cit_primary"
+        android:textSize="20sp"
+        android:fontFamily="sans-serif-medium" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_marginStart="14dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/txtCreditTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Course title"
+            android:textColor="@color/cit_text_primary"
+            android:textSize="12sp"
+            android:maxLines="2" />
+
+        <TextView
+            android:id="@+id/txtCreditMeta"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="Date • Status"
+            android:textColor="@color/cit_text_muted"
+            android:textSize="11sp" />
+    </LinearLayout>
+
+</LinearLayout>

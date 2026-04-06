@@ -72,6 +72,7 @@
                         android:background="@drawable/bg_glass_input"
                         android:hint="@string/label_student_name"
                         android:imeOptions="actionNext"
+                        android:inputType="textPersonName"
                         android:maxLines="1"
                         android:nextFocusDown="@id/inputRegisterNumber"
                         android:paddingHorizontal="24dp"
@@ -94,6 +95,7 @@
                         android:background="@drawable/bg_glass_input"
                         android:hint="@string/label_register_number"
                         android:imeOptions="actionNext"
+                        android:inputType="text"
                         android:maxLines="1"
                         android:nextFocusDown="@id/inputDepartment"
                         android:paddingHorizontal="24dp"
@@ -140,6 +142,7 @@
                         android:background="@drawable/bg_glass_input"
                         android:hint="@string/label_year"
                         android:imeOptions="actionNext"
+                        android:inputType="number"
                         android:maxLines="1"
                         android:nextFocusDown="@id/inputCourseName"
                         android:paddingHorizontal="24dp"
@@ -162,12 +165,52 @@
                         android:background="@drawable/bg_glass_input"
                         android:hint="@string/label_course_name"
                         android:imeOptions="actionNext"
+                        android:inputType="textCapWords"
                         android:maxLines="1"
                         android:nextFocusDown="@id/inputCourseId"
                         android:paddingHorizontal="24dp"
                         android:textColor="@color/cit_text_primary"
                         android:textColorHint="#E6FFFFFF" />
                 </com.google.android.material.textfield.TextInputLayout>
+
+                <TextView
+                    android:id="@+id/txtCourseSuggestionState"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:textColor="@color/cit_text_muted"
+                    android:textSize="12sp"
+                    android:visibility="gone" />
+
+                <LinearLayout
+                    android:id="@+id/layoutCourseSuggestions"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/bg_glass_item"
+                    android:orientation="vertical"
+                    android:padding="10dp"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/txtCourseLink"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/action_open_course_page"
+                    android:textColor="@color/cit_secondary"
+                    android:textSize="13sp"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/txtCourseLinkHint"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="@string/hint_open_course_page"
+                    android:textColor="@color/cit_text_muted"
+                    android:textSize="12sp"
+                    android:visibility="gone" />
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/layoutCourseId"
@@ -184,6 +227,7 @@
                         android:background="@drawable/bg_glass_input"
                         android:hint="@string/label_course_id"
                         android:imeOptions="actionNext"
+                        android:inputType="text"
                         android:maxLines="1"
                         android:nextFocusDown="@id/inputExamDate"
                         android:paddingHorizontal="24dp"
@@ -231,6 +275,7 @@
                         android:background="@drawable/bg_glass_input"
                         android:hint="@string/label_score"
                         android:imeOptions="actionNext"
+                        android:inputType="text"
                         android:maxLines="1"
                         android:nextFocusDown="@id/inputAmountPaid"
                         android:paddingHorizontal="24dp"
@@ -334,8 +379,9 @@
                         android:gravity="top|start"
                         android:hint="@string/label_remarks"
                         android:imeOptions="actionDone"
-                        android:inputType="textMultiLine"
+                        android:inputType="textCapSentences"
                         android:minHeight="100dp"
+                        android:maxLines="1"
                         android:paddingHorizontal="24dp"
                         android:paddingVertical="16dp"
                         android:textColor="@color/cit_text_primary"

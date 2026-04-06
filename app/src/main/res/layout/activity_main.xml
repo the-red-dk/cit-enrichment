@@ -76,17 +76,6 @@
                 app:backgroundTint="@color/cit_surface_alt"
                 app:strokeColor="@color/cit_card_glow"
                 app:strokeWidth="1dp" />
-
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/btnContinue"
-                style="@style/Widget.CIT.PillButton"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="@string/action_continue_guest"
-                app:backgroundTint="@color/cit_secondary"
-                app:iconTint="@color/cit_on_secondary"
-                app:strokeColor="@color/cit_secondary" />
             </LinearLayout>
         </LinearLayout>
     </ScrollView>

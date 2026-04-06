@@ -49,6 +49,11 @@ object SessionManager {
         onReady: () -> Unit,
         onFailure: (String) -> Unit
     ) {
+        if (isGuestMode(context)) {
+            onReady()
+            return
+        }
+
         if (!BuildConfig.ENABLE_FIREBASE_AUTH) {
             onReady()
             return
@@ -60,18 +65,7 @@ object SessionManager {
             return
         }
 
-        if (!isGuestMode(context)) {
-            onFailure(context.getString(R.string.error_session_unavailable))
-            return
-        }
-
-        auth.signInAnonymously()
-            .addOnSuccessListener {
-                onReady()
-            }
-            .addOnFailureListener { error ->
-                onFailure(getAuthErrorMessage(context, error.message, R.string.error_guest_session_failed))
-            }
+        onFailure(context.getString(R.string.error_session_unavailable))
     }
 
     fun getAuthErrorMessage(context: Context, rawMessage: String?, fallbackResId: Int): String {

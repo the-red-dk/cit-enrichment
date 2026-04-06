@@ -11,6 +11,19 @@
         android:scaleType="centerCrop"
         android:src="@drawable/green5bg" />
 
+    <ImageButton
+        android:id="@+id/btnBackRegister"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_gravity="top|start"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/bg_glass_circle_profile"
+        android:contentDescription="@string/action_back"
+        android:padding="10dp"
+        android:src="@drawable/ic_back_arrow"
+        app:tint="@color/cit_text_primary" />
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
